@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'montserrat': ['Montserrat', 'sans-serif'],
+				'sans': ['Open Sans', 'sans-serif']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -27,6 +31,11 @@ export default {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
+				},
+				gold: {
+					DEFAULT: '#D4AF37',
+					light: '#E4C555',
+					dark: '#B8941F'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
