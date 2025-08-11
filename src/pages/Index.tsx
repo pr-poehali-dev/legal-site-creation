@@ -111,7 +111,7 @@ const Index = () => {
               <a href="#contact" className="text-gray-700 hover:text-primary transition-colors">Контакты</a>
             </nav>
             <Button className="bg-primary hover:bg-primary/90 text-white font-medium">
-              Консультация
+              Рассказать о деле
             </Button>
           </div>
         </div>
