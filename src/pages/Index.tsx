@@ -66,6 +66,33 @@ const Index = () => {
     }
   ];
 
+  const blogPosts = [
+    {
+      title: "Новые изменения в арбитражном процессе 2024",
+      excerpt: "Анализируем ключевые нововведения в АПК РФ и их влияние на практику ведения арбитражных споров",
+      date: "15 янв 2024",
+      readTime: "5 мин",
+      category: "Арбитражное право",
+      image: "/img/24c2a454-00bc-46c2-836c-c224d9b7ad61.jpg"
+    },
+    {
+      title: "Корпоративные споры: стратегии защиты",
+      excerpt: "Рассматриваем эффективные подходы к разрешению внутрикорпоративных конфликтов и защите прав акционеров",
+      date: "8 янв 2024", 
+      readTime: "7 мин",
+      category: "Корпоративное право",
+      image: "/img/a5e2831a-b33f-4061-903b-1e2eca954c42.jpg"
+    },
+    {
+      title: "Судебная практика по налоговым спорам",
+      excerpt: "Обзор последних решений ВС РФ по вопросам налогового планирования и доначислений",
+      date: "3 янв 2024",
+      readTime: "6 мин", 
+      category: "Налоговое право",
+      image: "/img/4b6b91cc-edd3-4f95-b82c-13639776edf5.jpg"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -80,6 +107,7 @@ const Index = () => {
               <a href="#services" className="text-gray-700 hover:text-primary transition-colors">Услуги</a>
               <a href="#team" className="text-gray-700 hover:text-primary transition-colors">Команда</a>
               <a href="#cases" className="text-gray-700 hover:text-primary transition-colors">Кейсы</a>
+              <a href="#blog" className="text-gray-700 hover:text-primary transition-colors">Блог</a>
               <a href="#contact" className="text-gray-700 hover:text-primary transition-colors">Контакты</a>
             </nav>
             <Button className="bg-primary hover:bg-primary/90 text-white font-medium">
@@ -242,6 +270,62 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Blog Section */}
+      <section id="blog" className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-montserrat font-bold text-3xl lg:text-4xl text-gray-900 mb-4">
+              Юридический блог
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Экспертные статьи, анализ судебной практики и актуальные изменения в законодательстве
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border-0 shadow-md overflow-hidden">
+                <div className="relative">
+                  <img 
+                    src={post.image} 
+                    alt={post.title}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                      {post.category}
+                    </span>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                    <Icon name="Calendar" className="h-4 w-4 mr-2" />
+                    {post.date}
+                    <Icon name="Clock" className="h-4 w-4 ml-4 mr-2" />
+                    {post.readTime}
+                  </div>
+                  <h3 className="font-montserrat font-semibold text-xl text-gray-900 mb-3 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary/10">
+                    <Icon name="ArrowRight" className="mr-2 h-4 w-4" />
+                    Читать полностью
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8">
+              <Icon name="BookOpen" className="mr-2 h-5 w-5" />
+              Все статьи блога
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -331,6 +415,7 @@ const Index = () => {
                 <li><a href="#" className="hover:text-gold transition-colors">О нас</a></li>
                 <li><a href="#" className="hover:text-gold transition-colors">Команда</a></li>
                 <li><a href="#" className="hover:text-gold transition-colors">Кейсы</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors">Блог</a></li>
                 <li><a href="#" className="hover:text-gold transition-colors">Контакты</a></li>
               </ul>
             </div>
